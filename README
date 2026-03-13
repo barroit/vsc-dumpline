@@ -1,8 +1,4 @@
 dumpline
 ========
 
-This repo tracks source code of dumpline. It's a vscode extension, for dumping
-selected line into image.
-
-image/*.png and image/*.webp are licensed under LicenseRef-MDM-2.1.
-For other files, their license is defined by SPDX header.
+This repo tracks source code of dumpline. It dumps selected lines into image.

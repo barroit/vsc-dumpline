@@ -3,7 +3,7 @@
  * Copyright 2025 Jiamu Sun <barroit@linux.com>
  */
 dnl
-include(helper.patch/option.m4)dnl
+include(lib/option.m4)dnl
 
 import crypto from 'node:crypto'
 import { mkdirSync, readFileSync } from 'node:fs'
@@ -13,23 +13,23 @@ import { pathToFileURL } from 'node:url'
 import {
 	seq_wait as __seq_wait,
 	seq_wake as __seq_wake,
-} from '../helper/seq.js'
-import { error, warn, info } from '../helper/mesg.js'
+} from '../lib/seq.js'
+import { error, warn, info } from '../lib/mesg.js'
 import {
 	vsc_env,
 	vsc_exec_cmd,
 	vsc_window,
 	vsc_status_pos,
 	vsc_uri,
-} from '../helper/vsc.js'
+} from '../lib/vsc.js'
 
-import { opt_ensure_valid } from '../helper.patch/option.js'
-import { panel_init, panel_gen_html } from '../helper.patch/panel.js'
+import { opt_ensure_valid } from '../lib/option.js'
+import { panel_init, panel_gen_html } from '../lib/panel.js'
 import {
 	png_save_chunk,
 	png_save_size,
 	png_merge_chunk,
-} from '../helper.patch/png.js'
+} from '../lib/png.js'
 
 import { rt_dir, bar_map } from '../entry.js'
 
@@ -172,7 +172,8 @@ function init_panel(ext)
 	const prefix = ext.binary.uri
 
 	panel.onDidDispose(nuke_panel, undefined, ext.cleanup)
-	panel.iconPath = vsc_uri.joinPath(prefix, 'image', 'negi.svg')
+	panel.iconPath = vsc_uri.joinPath(prefix, 'image', 'barroit',
+					  'negi.svg')
 
 	webview.html = panel_gen_html(webview, prefix)
 	webview.onDidReceiveMessage(recv_event, undefined, ext.cleanup)

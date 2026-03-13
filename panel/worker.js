@@ -3,7 +3,7 @@
  * Copyright 2026 Jiamu Sun <barroit@linux.com>
  */
 
-import { png_acquire_filter, png_apply_filter } from '../helper.worker/png.js'
+import { png_acquire_filter, png_apply_filter } from '../lib/worker/png.js'
 
 const canvas = new OffscreenCanvas(39, 39)
 

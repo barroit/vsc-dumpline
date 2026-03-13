@@ -3,29 +3,29 @@
  * Copyright 2025, 2026 Jiamu Sun <barroit@linux.com>
  */
 dnl
-include(helper.panel/node.m4)dnl
-include(helper.patch/option.m4)dnl
+include(lib/panel/node.m4)dnl
+include(lib/option.m4)dnl
 
 import {
 	seq_wait as __seq_wait,
 	seq_wake as __seq_wake,
-} from '../helper/seq.js'
+} from '../lib/seq.js'
 
-import btn from '../helper.panel/btn.js'
+import btn from '../lib/panel/btn.js'
 import {
 	chunk_init,
 	chunk_parse,
 	chunk_balence_fast,
 	chunk_balence_slow,
-} from '../helper.panel/chunk.js'
-import { html_resolve_str, html_parse_str } from '../helper.panel/html.js'
-import { warn, info } from '../helper.panel/mesg.js'
+} from '../lib/panel/chunk.js'
+import { html_resolve_str, html_parse_str } from '../lib/panel/html.js'
+import { warn, info } from '../lib/panel/mesg.js'
 import {
 	render_init,
 	render_window_once,
 	render_window,
-} from '../helper.panel/render.js'
-import { style_init_root, style_resolve } from '../helper.panel/style.js'
+} from '../lib/panel/render.js'
+import { style_init_root, style_resolve } from '../lib/panel/style.js'
 import {
 	tree_canonicalize,
 	tree_trim_tail,
@@ -34,9 +34,9 @@ import {
 	tree_calc_indent_body,
 	tree_setup_lineno,
 	tree_pad_head,
-} from '../helper.panel/tree.js'
-import { dump_init, dump_free, dump_dispatch } from '../helper.panel/dump.js'
-import { utf16_init } from '../helper.panel/utf16.js'
+} from '../lib/panel/tree.js'
+import { dump_init, dump_free, dump_dispatch } from '../lib/panel/dump.js'
+import { utf16_init } from '../lib/panel/utf16.js'
 
 let __config
 const result = {}

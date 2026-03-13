@@ -10,7 +10,7 @@ import {
 	vsc_fetch_config,
 	vsc_map_ctx,
 	vsc_add_editor_cmd,
-} from './helper/vsc.js'
+} from './lib/vsc.js'
 
 const cmds = {
 	'multiple': [ import('./cmd/multiple.js'), vsc_add_editor_cmd ],

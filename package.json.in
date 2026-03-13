@@ -32,7 +32,7 @@ include(package/submenu.json)dnl
    "publisher": "barroit",
    "displayName": "Dumpline",
    "description": "Dumping selected lines into image.",
-   "icon": "image/negi.png",
+   "icon": "image/barroit/negi.png",
    "categories": [
       "Other"
    ],
