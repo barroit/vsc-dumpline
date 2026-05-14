@@ -20,7 +20,7 @@ terser += --module --ecma 2020 --mangle --comments false \
 prefix := build
 m4-prefix := $(prefix)/m4
 
-ifneq ($(minimize),)
+ifneq ($(MINIMIZE),)
 	minimize := -terser
 endif
 
