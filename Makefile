@@ -84,7 +84,8 @@ archive-in += README.md $(wildcard image/**/*)
 archive-y  := $(prefix)/$(name).vsix
 
 $(archive-y): $(archive-in) $(package-y)
-	vsce package --skip-license -o $@
+	vsce package --skip-license --allow-package-all-secrets \
+		     --allow-package-env-file -o $@
 
 install: $(archive-y)
 	code --install-extension $<
@@ -94,7 +95,8 @@ uninstall:
 	     $$(code --list-extensions | grep $(name) || printf '39\n')
 
 publish: $(archive-y)
-	vsce publish --skip-license
+	vsce publish --skip-license --allow-package-all-secrets \
+		     --allow-package-env-file
 
 .PHONY: clean $(preclean) distclean $(predistclean)
 
